@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Catcher Game</title>
+    <!-- Link to external Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="gameCanvas">
+        <!-- Live HUD Info -->
+        <div class="ui-container">
+            <div class="ui-box">Score: <span id="scoreVal">0</span></div>
+            <div class="ui-box">Lives: <span id="livesVal">3</span></div>
+        </div>
+
+        <!-- Player Basket -->
+        <div id="basket">🗑️</div>
+
+        <!-- Start Game Screen Overlay -->
+        <div id="startScreen" class="screen">
+            <h1>ECO CATCHER</h1>
+            <p>Catch the leaves (🌱) and water drops (💧).<br>Avoid the dangerous trash (💥)!<br><br>Move your mouse or slide your finger across the area to move the bin.</p>
+            <button class="start-btn" onclick="startGame()">Play Game</button>
+        </div>
+
+        <!-- Game Over Screen Overlay -->
+        <div id="gameOverScreen" class="screen hidden">
+            <h1 style="color: #ef4444;">GAME OVER</h1>
+            <p>The planet ran out of resources!<br>Your Final Score: <span id="finalScore">0</span></p>
+            <button class="start-btn" onclick="startGame()">Try Again</button>
+        </div>
+    </div>
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
