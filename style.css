@@ -1,0 +1,132 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #0f172a;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+/* Game Arena Canvas Container */
+#gameCanvas {
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 60%, #064e3b 100%);
+    border: 4px solid #ffffff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    cursor: none; /* Hides mouse cursor within game bounds */
+}
+
+/* Heads Up Display (HUD) Score Tracking Area */
+.ui-container {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+.ui-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Player Controlled Bin Styling */
+#basket {
+    position: absolute;
+    bottom: 20px;
+    left: 165px;
+    width: 70px;
+    height: 40px;
+    background-color: #10b981;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+/* Falling Elements Structure */
+.falling-item {
+    position: absolute;
+    font-size: 28px;
+    user-select: none;
+}
+
+/* Menu Screens (Start & Game Over Layout Overlays) */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 20;
+}
+.screen h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #10b981;
+    letter-spacing: 1px;
+}
+.screen p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Start/Restart Buttons Styling */
+.start-btn {
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.start-btn:hover {
+    transform: scale(1.05);
+    background-color: #e2e8f0;
+}
+.start-btn:active {
+    transform: scale(0.98);
+}
+
+/* Utility class to switch interface screens */
+.hidden {
+    display: none !important;
+}
